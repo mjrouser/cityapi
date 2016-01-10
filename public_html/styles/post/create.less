@@ -1,0 +1,68 @@
+/*
+    create.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.post-create {
+    section {
+        position: absolute;
+        top: 60px;
+        width: 158px;
+        height: 175px;
+
+        a {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 156px;
+            height: 152px;
+            border: @border;
+            background-position: center center;
+
+            &:hover {
+                width: 158px - 2*6px;
+                height: 154px - 2*6px;
+                border: 6px solid @blue;
+            }
+        }
+    }
+
+    .or-1, .or-2 {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+    }
+
+    section.text {
+        left: 30px;
+
+        a {
+            background-image: url('@{baseImageUrl}/feed-add-type-text.png');
+        }
+    }
+    .or-1 {
+        left: 30px + 159px;
+        right: 700px / 2 + 158px / 2;
+    }
+    section.image {
+        left: 50%;
+        margin-left: -158px / 2;
+
+        a {
+            background-image: url('@{baseImageUrl}/feed-add-type-image.png');
+        }
+    }
+    .or-2 {
+        right: 30px + 158px;
+        left: 700px / 2 + 158px / 2;
+    }
+    section.resource {
+        right: 30px;
+
+        a {
+            background-image: url('@{baseImageUrl}/feed-add-type-resource.png');
+        }
+    }
+}

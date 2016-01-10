@@ -1,0 +1,24 @@
+/*
+    view.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.location-view {
+    .feed.location + .controls {
+        margin: 50px 5px;
+
+        .add {
+            .square-button('@{baseImageUrl}/feed-add.png');
+        }
+    }
+
+    .project .controls {
+        * {
+            margin-right: 20px;
+        }
+        .edit {
+            .square-button();
+        }
+    }
+}

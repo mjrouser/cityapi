@@ -1,0 +1,46 @@
+/*
+    search.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.site-search {
+    .outer-box {
+        header {
+            background: @gray;
+        }
+
+        .content {
+            padding: 40px;
+            border: none;
+        }
+
+        ol {
+            margin-left: 30px;
+
+            list-style-type: decimal;
+
+            .result {
+                padding-left: 20px;
+                margin-bottom: 20px;
+
+                a {
+                    color: @blue;
+                    font-size: 19px;
+                    font-weight: normal;
+                    text-decoration: underline
+                }
+
+                .description {
+                    font-size: 16px;
+                    margin-bottom: 0.75em;
+                }
+
+                .url {
+                    color: @darkBlue;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

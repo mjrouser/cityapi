@@ -1,0 +1,32 @@
+//
+// project.less
+//
+// Copyright Stefan Fisk 2012
+//
+
+.project {
+    &.status-started > header {
+        background: @projectStatusStartedColor;
+    }
+    &.status-under_construction > header {
+        background: @projectStatusUnderConstructionColor;
+    }
+    &.status-finished > header {
+        background: @projectStatusFinishedColor;
+    }
+    &.status-ongoing > header {
+        background: @projectStatusOngoingColor;
+    }
+    &.status-low_activity > header {
+       background: @projectStatusLowActivityColor;
+    }
+    &.status-no_activity > header {
+        background: @projectStatusNoActivityColor;
+    }
+    &.status-abandoned > header {
+        background: @projectStatusAbandonedColor;
+    }
+    &.status-urgent > header {
+        background: @projectStatusUrgentColor;
+    }
+}

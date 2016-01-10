@@ -1,0 +1,37 @@
+/*
+    list.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.message-list {
+    .outer-box > .content {
+        padding-top: 20px;
+    }
+    li {
+        .clearfix();
+
+        margin-bottom: 20px;
+
+        + li {
+            margin: 20px 0;
+        }
+
+        .content {
+            font-size: 11px;
+            padding: 20px 10px;
+            .clearfix();
+        }
+    }
+
+    .sent {
+        position: relative;
+        top: 3px;
+        margin-right: 6px;
+    }
+    img {
+        border: @border;
+        margin: 0 0 0 40px;
+        float: left;
+    }
+}

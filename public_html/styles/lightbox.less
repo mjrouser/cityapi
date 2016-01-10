@@ -1,0 +1,148 @@
+/*
+    lightbox.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+#lightbox {
+    .box {
+        color: @lightboxTextColor;
+
+        h2,
+        h3 {
+            font-weight: normal;            
+        }
+
+        h2 {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            font-size: 12px;
+        }
+
+        section {
+            h3 {
+                font-size: 14px;
+                font-weight: normal;
+            }
+
+            &.inactive {
+                display: none;
+            }
+        }
+
+        .radio {
+            float: left;
+            height: 27px;
+            margin-right: 30px;
+        }
+        label.checkbox,
+        .radio label {
+            display: block;
+            padding-left: 27px + 15px;
+            height: 27px;
+            line-height: 27px;
+            font-size: 10px;
+            background: url('@{baseImageUrl}/checkbox-unchecked.png') no-repeat left center;
+        }
+        input[type=checkbox],
+        input[type=radio] {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        input[type=checkbox]:checked ~ label.checkbox,
+        input[type=radio]:checked ~ label {
+            background: url('@{baseImageUrl}/checkbox-checked.png') no-repeat left center;
+        }
+
+        button,
+        input[type=button],
+        input[type=submit] {
+            .button-reset();
+
+            min-width: 60px;
+            padding: 0 10px;
+            height: 25px;
+            font-size: 12px;
+            border: @border;
+        }
+
+        input[type=text],
+        textarea {
+            padding: 15px;
+            resize: none;
+            border: none;
+            background: @grayLightish;
+            font-size: 11px;
+
+            .placeholder-color(@grayDarkish);
+        }
+
+        .errorMessage {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 25px;
+            font-size: 11px;
+        }
+
+        nav {
+            position: absolute;
+            right: 30px;
+            bottom: 5px;
+
+            > * {
+                display: inline-block;
+                margin-left: 5px !important;
+            }
+        }
+    }
+}
+
+.lightbox {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('@{baseImageUrl}/lightbox-overlay.png');
+    }
+
+    .box {
+        @borderWidth: 15px;
+        @width: 700px;
+        @height: 310px;
+        @outerWidth: @borderWidth + @width + @borderWidth;
+        @outerHeight: @borderWidth + @height + @borderWidth;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: @outerWidth;
+        height:  @outerHeight;
+        margin-left: -@outerWidth / 2;
+        margin-top: -@outerHeight / 2;
+        background: url('@{baseImageUrl}/lightbox-border.png');
+
+        iframe {
+            position: absolute;
+            left: @borderWidth;
+            top: @borderWidth;
+            width: @width;
+            height: @height;
+            border: none;
+            background: @lightboxBoxBackgroundColor;
+        }
+    }
+}

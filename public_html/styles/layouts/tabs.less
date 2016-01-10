@@ -1,0 +1,63 @@
+/*
+    tabs.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.layout-tabs {
+    .layout-main();
+
+    > .container > .sticky-footer-wrapper > .main > .tabs {
+        @height: 48px;
+
+        height: @height;
+
+        margin: 20px 0 35px 0;
+
+        position: relative;
+
+        border-bottom: @border;
+
+        z-index: 0;
+
+        .tab {
+            position: absolute;
+            @width: 330px;
+
+            display: block;
+            left: 50%;
+            top: -@borderWidth;
+            width: @width;
+            height: @height;
+            line-height: @height;
+
+            z-index: 0;
+
+            font-size: 14px;
+            text-align: center;
+
+            background: url('@{baseImageUrl}/tab-active-background.png') repeat-x top;
+
+            &.map {
+                margin-left: -(1.5 * @width + 2 * @borderWidth);
+            }
+            &.spaces {
+                margin-left: -0.5 * @width;
+
+                &.active {
+                    margin-left: -0.5 * (@width + 2 * @borderWidth);
+                }
+            }
+            &.resources {
+                margin-left: 0.5 * @width + 2 * @borderWidth;
+            }
+
+            &.active {
+                z-index: 1;
+                border: @border;
+                border-bottom: @borderWidth solid @backgroundColor;
+                background: none;
+            }
+        }
+    }
+}

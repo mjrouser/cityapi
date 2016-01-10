@@ -1,0 +1,49 @@
+/*
+    create-image.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.post-createImage {
+    h3 {
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+
+    .container {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        right: 30px;
+        bottom: 40px;
+        padding: 15px;
+        background: @lightboxControlBackgroundColor;
+        font-size: 11px;
+
+        input[type="button"].file {
+            .button-reset();
+
+            position: absolute;
+            left: 10px;
+            top: 35px;
+            width: auto;
+            height: 25px;
+            padding: 0 10px;
+            font-size: 12px;
+            border: @border;
+        }
+        label[for="Image[file]"] {
+            .single-line-text();
+
+            position: absolute;
+            left: 12px;
+            right: 10px;
+            top: 60px;
+            font-size: 12px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    }
+}

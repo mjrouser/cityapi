@@ -1,0 +1,123 @@
+//
+// comment.less
+//
+// Copyright Stefan Fisk 2012
+//
+
+.comment {
+    @leftOffset: 0;
+
+    .clearfix();
+
+    position: relative;
+
+    margin: 10px 0;
+
+    .user-image {
+        float: left;
+        border: @border;
+    }
+
+    .text-container {
+        position: relative;
+        min-height: 65px;
+        margin-left: 121px;
+
+        .translate {
+            .button-reset();
+            position: absolute;
+            right: 30px;
+            bottom: 15px;
+            line-height: inherit;
+            color: @blue;
+            font-size: 10px;
+            text-transform: lowercase;
+        }
+    }
+    .text {
+        padding: 15px 15px 26px (@leftOffset + 45px);
+
+        font-size: 11px;
+
+        h4,
+        h4 a {
+            color: @grayLightish;
+            font-weight: normal;
+        }
+    }
+
+    .delete {
+        .button-reset();
+
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 9px;
+        height: 9px;
+
+        background: url('@{baseImageUrl}/comment-delete.png');
+    }
+    .chrome {
+
+        > * {
+            position: absolute;
+        }
+
+        .left-top {
+            left: @leftOffset;
+            top: 0;
+            width: 31px;
+            height: 7px;
+            background: url('@{baseImageUrl}/comment-left-top.png');
+        }
+        .center-top {
+            left: @leftOffset + 31px;
+            right: 9px;
+            top: 0;
+            height: 7px;
+            background: url('@{baseImageUrl}/comment-center-top.png');
+        }
+        .right-top {
+            right: 0;
+            top: 0;
+            width: 9px;
+            height: 7px;
+            background: url('@{baseImageUrl}/comment-right-top.png');
+        }
+        .right-center {
+            right: 0;
+            top: 7px;
+            bottom: 18px;
+            width: 9px;
+            background: url('@{baseImageUrl}/comment-right-center.png');
+        }
+        .right-bottom {
+            right: 0;
+            bottom: 0;
+            width: 9px;
+            height: 18px;
+            background: url('@{baseImageUrl}/comment-right-bottom.png');
+        }
+        .center-bottom {
+            left: @leftOffset + 31px;
+            right: 9px;
+            bottom: 0;
+            height: 26px;
+            background: url('@{baseImageUrl}/comment-center-bottom.png');
+        }
+        .left-bottom {
+            left: @leftOffset;
+            bottom: 0;
+            width: 31px;
+            height: 61px;
+            background: url('@{baseImageUrl}/comment-left-bottom.png');
+        }
+        .left-center {
+            left: @leftOffset;
+            top: 7px;
+            bottom: 61px;
+            width: 31px;
+            background: url('@{baseImageUrl}/comment-left-center.png');
+        }
+    }
+}

@@ -1,0 +1,87 @@
+/*
+    view.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.user-view .main {
+    .user {
+        > header {
+            .name {
+                float: left;
+            }
+            .registration-time {
+                float: right;
+            }
+        }
+
+        > .content {
+            padding: 30px 0 30px 30px;
+        }
+
+        img {
+            border: @border;
+            margin-left: 40px;
+        }
+
+        .description {
+            .content {
+                font-size: 11px;
+                padding: 15px 10px 10px 10px;
+
+                .translate {
+                    .button-reset();
+
+                    position: absolute;
+                    right: 20px;
+                    bottom: 5px;
+
+                    line-height: inherit;
+                    color: @blue;
+                    font-size: 10px;
+                    text-transform: lowercase;
+                }
+            }
+        }
+
+        .controls {
+            margin: 15px 0 0 40px;
+
+            .edit,
+            .message,
+            .messages {
+                .square-button();
+
+                display: block;
+
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .notifications {
+        padding: 0 0 0 10px;
+
+        > li {
+            margin: 20px 0;
+
+            .comment,
+            .message {
+                margin: 0 10px 0 60px;
+            }
+        }
+    }
+
+    .empty-message,
+    .clear-all {
+        padding: 30px;
+        text-align: center;
+    }
+    li > img {
+        margin-left: 10px;
+    }
+
+    .recent-contributions > .content {
+        padding-top: 30px;
+    }
+}

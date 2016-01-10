@@ -1,0 +1,76 @@
+/*
+    about.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.site-about {
+    .about .content {
+        padding: 15px 80px 30px 80px;
+        font-size: 12px;
+    }
+
+    .contact .content {
+        .clearfix();
+        padding: 15px 56px 50px 30px;
+        font-size: 12px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+    .row {
+        .clearfix();
+    }
+    .row + .row {
+        margin-top: 15px;
+    }
+    label {
+        display: inline-block;
+        width: 80px;
+    }
+    input,
+    textarea {
+        border: @border;
+    }
+
+    input[type="text"] {
+        width: 390px;
+    }
+    textarea {
+        width: 840px;
+        height: 165px;
+        resize: none;
+    }
+    .errorMessage {
+        margin-top: 5px;
+        color: @red;
+    }
+    input[type="submit"] {
+        .button-reset();
+
+        border: @border;
+        font-size: inherit;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 15px;
+        float: right;
+    }
+
+    .flash-success {
+        font-weight: bold;
+    }
+    .facebook, .twitter {
+        display: block;
+        width: 65px;
+        height: 65px;
+        float: left;
+        margin-right: 40px;
+    }
+    .facebook {
+        background: url('@{baseImageUrl}/contact-facebook.png');
+    }
+    .twitter {
+        background: url('@{baseImageUrl}/contact-twitter.png');
+    }
+}

@@ -1,0 +1,109 @@
+/*
+    feed.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+.feed {
+    &.status-started > header,
+    .status-started > .inner-box > header {
+        background: @projectStatusStartedColor;
+    }
+    &.status-under_construction > header,
+    .status-under_construction > .inner-box > header {
+        background: @projectStatusUnderConstructionColor;
+    }
+    &.status-finished > header,
+    .status-finished > .inner-box > header {
+        background: @projectStatusFinishedColor;
+    }
+    &.status-ongoing > header,
+    .status-ongoing > .inner-box > header {
+        background: @projectStatusOngoingColor;
+    }
+    &.status-low_activity > header,
+    .status-low_activity > .inner-box > header {
+       background: @projectStatusLowActivityColor;
+    }
+    &.status-no_activity > header,
+    .status-no_activity > .inner-box > header {
+        background: @projectStatusNoActivityColor;
+    }
+    &.status-abandoned > header,
+    .status-abandoned > .inner-box > header {
+        background: @projectStatusAbandonedColor;
+    }
+    &.status-urgent > header,
+    .status-urgent > .inner-box > header {
+        background: @projectStatusUrgentColor;
+    }
+
+    .meta {
+        .clearfix();
+
+        position: relative;
+
+        padding: 20px 0;
+        .feed-image {
+            border: @border;
+            margin: 0 0 0 60px;
+            float: left;
+        }
+
+        p {
+            margin: 0 0 0 211px;
+        }
+
+        border-bottom: @border;
+        font-size: 12px;
+
+        .translate {
+            .button-reset();
+
+            position: absolute;
+            right: 20px;
+            bottom: 5px;
+
+            line-height: inherit;
+            color: @blue;
+            font-size: 10px;
+            text-transform: lowercase;
+        }
+    }
+
+    > .content {
+        .clearfix();
+    }
+
+    .controls {
+        padding: 10px 10px 40px 60px;
+
+        .add {
+            .button-reset();
+
+            height: 19px;
+            padding-left: 25px;
+            background: url('@{baseImageUrl}/feed-add.png') no-repeat left center;
+            font-size: 10px;
+            margin-right: 10px;
+        }
+        .follow {
+            .square-button('@{baseImageUrl}/feed-add.png');
+        }
+        .unfollow {
+            .square-button('@{baseImageUrl}/feed-remove.png');
+        }
+    }
+
+    .posts {
+        list-style: none;
+
+        > li {
+            margin-bottom: 20px;
+
+            + li {
+                margin: 20px 0;
+            }
+        }
+    }
+}

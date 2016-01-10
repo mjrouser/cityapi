@@ -1,0 +1,36 @@
+//
+// login.less
+//
+// Copyright Stefan Fisk 2012.
+//
+
+body.auth-login {
+    .login-via-facebook {
+        .button-reset();
+
+        width: 203px;
+        height: 37px;
+        line-height: 37px;
+        background: url(../../images/login-via-facebook.png);
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        padding-left: 45px;
+    }
+    &.layout-lightbox {
+        h1,
+        p {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        h1 {
+            top: 2em;
+        }
+        p {
+            top: 6em
+        }
+    }
+}

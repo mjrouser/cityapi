@@ -1,0 +1,105 @@
+//
+// post.less
+//
+// Copyright Stefan Fisk 2012
+//
+
+.post {
+    .clearfix();
+
+    &.status-started > .inner-box > header {
+        background: @projectStatusStartedColor;
+    }
+    &.status-under_construction > .inner-box > header {
+        background: @projectStatusUnderConstructionColor;
+    }
+    &.status-finished > .inner-box > header {
+        background: @projectStatusFinishedColor;
+    }
+    &.status-ongoing > .inner-box > header {
+        background: @projectStatusOngoingColor;
+    }
+    &.status-low_activity > .inner-box > header {
+       background: @projectStatusLowActivityColor;
+    }
+    &.status-no_activity > .inner-box > header {
+        background: @projectStatusNoActivityColor;
+    }
+    &.status-abandoned > .inner-box > header {
+        background: @projectStatusAbandonedColor;
+    }
+    &.status-urgent > .inner-box > header {
+        background: @projectStatusUrgentColor;
+    }
+
+    > .user-image {
+        margin-left: 60px;
+        float: left;
+        border: @border;
+    }
+
+    .content {
+        font-size: 11px;
+        .clearfix();
+
+        iframe.youtube-embed {
+            width: 794px;
+            height: 720 / 1280 * 794px;
+        }
+
+        .comments {
+            padding: 10px;
+        }
+    }
+
+    .comment-controls {
+        clear: both;
+        float: left;
+        margin: 10px;
+
+        .add {
+            .button-reset();
+
+            height: 19px;
+            padding-left: 25px;
+            background: url('@{baseImageUrl}/feed-add.png') no-repeat left center;
+            font-size: 10px;
+        }
+    }
+
+    &.post-type-text, &.post-type-resource {
+        .content > .text-container {
+            position: relative;
+            padding: 20px 10px;
+
+            .translate {
+                .button-reset();
+
+                position: absolute;
+                right: 20px;
+                bottom: 5px;
+
+                line-height: inherit;
+                color: @blue;
+                font-size: 10px;
+                text-transform: lowercase;
+            }
+        }
+    }
+
+    &.post-type-image {
+        .image-container {
+            height: 150px;
+            width: 794px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                top: 50%;
+                cursor: pointer;
+                border: none;
+            }
+        }
+    }
+}

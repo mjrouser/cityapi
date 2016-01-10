@@ -1,0 +1,235 @@
+/*
+    main.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+.layout-main() {
+    @footerHeight: 125px;
+
+    background: url('@{baseImageUrl}/body-background.png') repeat-x top;
+
+    > .container {
+        width: 1024px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+
+        z-index: 0;
+
+        > .sticky-footer-wrapper {
+            min-height: 100%;
+
+            > header {
+                @height: 50px;
+
+                position: relative;
+                height: @height;
+                padding-top: 12px;
+                margin-bottom: 30px;
+                z-index: 1;
+
+                > * {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .logo {
+                    display: inline-block;
+                    background: url('@{baseImageUrl}/header-logo.png') no-repeat center;
+                    width: 74px;
+                    height: 50px;
+                }
+
+                nav {
+                    display: inline-block;
+                    text-transform: lowercase;
+                    font-size: 12px;
+
+                    a {
+                        margin: 0 17px;
+                    }
+                }
+
+                .region {
+                    position: relative;
+                    width: 100px;
+                    margin: 0 20px;
+                    height: @baseLineHeight;
+                    font-size: 18px;
+                    color: @black;
+
+                    .list {
+                        position: absolute;
+                        left: 0;
+                        top: 100%;
+                        width: 100%;
+                        padding-right: 20px;
+
+                        .arrow {
+                            position: absolute;
+                            right: 0;
+                            top: -10px;
+                            width: 20px;
+                            height: 15px;
+
+                            cursor: pointer;
+                            background: url('@{baseImageUrl}/header-region-arrow.png') no-repeat right top;
+                        }
+
+                        ul {
+                            position: relative;
+                            left: -10px;
+                            width: 100%;
+                            display: none;
+                            background-color: @grayLighter;
+                            border: @border;
+                            list-style: none;
+                            margin: 0;
+                            padding: 10px 25px 5px 10px;
+                            z-index: 1;
+                        }
+
+                        &:hover {
+                            ul {
+                                display: block;
+                            }
+                        }
+
+                        &.empty {
+                           opacity: 0.5;
+
+                           .arrow {
+                               cursor: auto;
+                            }
+
+                            &:hover {
+                                ul {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                input[type="search"] {
+                    @imageWidth: 336px;
+                    @imageHeight: 31px;
+                    @paddingTop: 4px;
+                    @paddingRight: 32px;
+                    @paddingBottom: 0;
+                    @paddingLeft: 10px;
+
+                    width: @imageWidth - @paddingLeft - @paddingRight;
+                    height: @imageHeight - @paddingTop - @paddingBottom;
+                    padding: @paddingTop @paddingRight @paddingBottom @paddingLeft;
+
+                    margin: 0 35px;
+
+                    background: url('@{baseImageUrl}/header-search.png');
+                    border: none;
+                    outline: none;
+                }
+
+                .user {
+                    float: right;
+                    line-height: @height;
+
+                    .notification-count {
+                        position: relative;
+                        top: -5px;
+                        border-radius: 1em;
+                        background: #F00;
+                        padding: 2px 5px;
+                        font-size: 10px;
+                        height: 1.5em;
+                        line-height: 1.5em;
+                        text-align: center;
+                        a,
+                        a:hover,
+                        a:visited,
+                        a:active {
+                            color: #FFF;
+                        }
+                    }
+
+                    .logout {
+                        margin-left: 30px;
+                    }
+                }
+
+                .language-selector {
+                    .clearfix();
+
+                    position: absolute;
+                    right: 16px;
+                    bottom: -5px;
+                    height: 12px;
+
+                    font-size: 12px;
+
+                    .language {
+                        float: right;
+                        height: 12px;
+                        line-height: 12px;
+                        padding: 0 3px;
+
+                        &.current {
+                            font-weight: bold;
+                        }
+
+                        + .language {
+                            border-right: 1px solid @textColor;
+                        }
+                    }
+                }
+            }
+
+            > .main {
+                z-index: 0;
+
+                padding-bottom: @footerHeight - 1px;
+            }
+        }
+
+        > footer {
+            @borderWidth: 15px;
+            border-top: @borderWidth solid @blue;
+
+            position: relative;
+
+            height: @footerHeight - @borderWidth;
+            line-height: @footerHeight - @borderWidth - @borderWidth / 2;
+            margin-top: -@footerHeight;
+
+            clear:both;
+
+            > * + * {
+                margin: 0 10px;
+            }
+            .align-left {
+                float: left;
+            }
+            .align-right {
+                float: right;
+            }
+
+            .align-top {
+                display: table-cell;
+                vertical-align: top;
+            }
+            .align-middle {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .align-bottom {
+                display: table-cell;
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+
+body.layout-main {
+    .layout-main();
+}

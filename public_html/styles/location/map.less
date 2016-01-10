@@ -1,0 +1,76 @@
+/*
+    map.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.location-map {
+    > .container > .main > .content {
+        border: @border;
+    }
+
+    .infoBox {
+        @borderWidth: 15px;
+        @width: 400px;
+
+        position: relative;
+        background: url('@{baseImageUrl}/lightbox-border.png');
+
+        overflow: visible;
+
+        margin-left: 10px;
+        margin-top: -60px;
+
+        .arrow {
+            position: absolute;
+            left: -10px;
+            top: 30px;
+            width: 10px;
+            height: 20px;
+            background: url('@{baseImageUrl}/info-box-arrow.png');
+        }
+
+        .location {
+            width: @width - 2 * @borderWidth;
+            padding: @borderWidth;
+            background: @grayLight;
+            margin: @borderWidth;
+
+            .name {
+                font-size: 14px;
+            }
+
+            .project {
+                padding: @borderWidth;
+                margin-top: @borderWidth;
+                border-top: 2px solid @white;
+
+                .name {
+                    margin-bottom: @borderWidth;
+                }
+
+                .description {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    .locations {
+        margin-top: 50px;
+
+        > li {
+            margin-bottom: 30px;
+
+            > img {
+                margin-left: 80px;
+                border: @border;
+            }
+
+            .content {
+                font-size: 11px;
+                padding: 20px 10px;
+            }
+        }
+    }
+}

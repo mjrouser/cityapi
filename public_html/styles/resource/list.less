@@ -1,0 +1,39 @@
+/*
+    list.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.resource-list {
+    .outer-box {
+        header .type {
+            display: block;
+            width: 80px;
+            height: 100%;
+            float: right;
+            text-align: center;
+
+            &.selected {
+                background: #939598;
+            }
+        }
+
+        > .content {
+            padding-top: 0px;
+
+            .controls {
+                margin: 20px 0;
+            }
+
+            .empty-message {
+                padding: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    .scope-location .inner-box > header ,
+    .scope-project .inner-box > header {
+        background-color: @projectStatusNoActivityColor;
+    }
+}

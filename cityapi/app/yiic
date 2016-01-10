@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+/*
+    yiic
+
+    Copyright Stefan Fisk 2012.
+*/
+
+require_once(dirname(__FILE__).'/yiic.php');

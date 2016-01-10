@@ -1,0 +1,51 @@
+/*
+    list.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.location-list {
+    .outer-box.location {
+        img {
+            border: @border;
+            margin-left: 20px;
+        }
+
+        .project .content {
+            position: relative;
+            font-size: 11px;
+            padding: 10px;
+
+            .translate {
+                .button-reset();
+
+                position: absolute;
+                right: 20px;
+                bottom: 0px;
+
+                line-height: inherit;
+                color: @blue;
+                font-size: 10px;
+                text-transform: lowercase;
+            }
+        }
+
+        ol {
+            .clearfix();
+            list-style: none;
+    
+            li {
+                .clearfix();
+
+                margin: 30px 0 30px 30px;
+
+                + li {
+                }
+            }
+        }
+    }
+
+    .projects {
+        list-style: none;
+    }
+}

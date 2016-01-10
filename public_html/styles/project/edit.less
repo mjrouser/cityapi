@@ -1,0 +1,223 @@
+/*
+    create.less
+
+    Copyright Stefan Fisk 2012.
+*/
+
+body.project-edit {
+    h3 {
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+
+    section.name-description {
+        .errorMessages {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 25px;
+            font-size: 11px;
+
+            .errorMessage {
+                float: right;
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-left: 5px;
+            }
+        }
+
+        input[name="Project[name]"] {
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            right: 30px;
+        }
+
+        textarea[name="Project[description]"] {
+            position: absolute;
+            top: 105px;
+            left: 30px;
+            width: 610px;
+            height: 135px;
+        }
+    }
+
+    section.image {
+        img {
+            position: absolute;
+            left: 30px;
+            top: 80px;
+        }
+
+        label {
+            position: absolute;
+            top: 90px;
+            left: 150px;
+        }
+        input[type="button"].file {
+            .button-reset();
+
+            position: absolute;
+            left: 150px;
+            top: 120px;
+            width: auto;
+            height: 25px;
+            padding: 0 10px;
+            font-size: 12px;
+            border: @border;
+        }
+        label[for="Image[file]"] {
+            .single-line-text();
+
+            position: absolute;
+            left: 150px;
+            right: 10px;
+            top: 155px;
+            font-size: 12px;
+        }
+        input[type="file"] {
+            margin-left: -9999em;
+        }
+    }
+
+    section.champs {
+        ul {
+            position: absolute;
+            top: 60px;
+            right: 30px;
+            bottom: 40px;
+            left: 30px;
+            .clearfix();
+            overflow-y: auto;
+        }
+
+        .champ {
+            label {
+                position: relative;
+
+                width: 106px;
+                height: 106px;
+
+                margin: (700px - 2 * 30px - 5 * 106px) / 6;
+
+                float: left;
+
+                color: white;
+                font-size: 12px;
+                text-align: center;
+
+                .name {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: #555;
+                    opacity: 0.8;
+                }
+
+                .is-champ {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 40px;
+                }
+            }
+
+            input:checked ~ label {
+                border: 6px solid @blue;
+                margin: (700px - 2 * 30px - 5 * 106px) / 6 - 6px;
+
+                .is-champ {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    section.status {
+        font-size: 11px;
+
+        .statuses {
+            position: absolute;
+            top: 150px;
+            height: 0;
+        }
+
+        .automatic {
+            position: absolute;
+            top: 150px - 45px;
+            height: 90px;
+            right: 46px;
+            width: 700px / 8 * 3;
+            background: @lightboxControlBackgroundColor;
+
+            label {
+                position: absolute;
+                bottom: -1.5em;
+                left: 0;
+                right: 0;
+                line-height: 1em;
+                font-size: 11px;
+                color: @blue;
+                text-align: center;
+            }
+        }
+
+        .status {
+            position: relative;
+            float: left;
+            width: 0;
+            margin-left: 700px / 8;
+            text-transform: capitalize;
+
+            .name {
+                display: block;
+                width: 46px;
+                height: 46px;
+                margin-left: -23px;
+                margin-top: -23px;
+
+                .text {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    width: 200px;
+                    margin-left: -200px / 2;
+                    text-align: center;
+                }
+            }
+
+            input:checked ~ .name {
+                width: 60px;
+                height: 60px;
+                margin-left: -30px;
+                margin-top: -30px;
+            }
+
+            &.started .name {
+                background: @projectStatusStartedColor;
+            }
+            &.under_construction .name {
+                background: @projectStatusUnderConstructionColor;
+            }
+            &.finished .name {
+                background: @projectStatusFinishedColor;
+            }
+            &.ongoing .name {
+                background: @projectStatusOngoingColor;
+            }
+            &.low_activity .name {
+                background: @projectStatusLowActivityColor;
+            }
+            &.no_activity .name {
+                background: @projectStatusNoActivityColor;
+            }
+            &.abandoned .name {
+                background: @projectStatusAbandonedColor;
+            }
+        }
+    }
+}
